@@ -7,6 +7,8 @@ body {
 
 .navbar {
     background-color: #636354;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
+
 }
 
 .btn, .signup {
@@ -20,6 +22,17 @@ body {
 }
 
 .banner {
-    opacity: 0.9;
+    opacity: 1;
     object-fit: cover;
 }
+.centered {
+    position: absolute;
+    color: white;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .items-grid img {
+    max-width: 100%;
+  }
