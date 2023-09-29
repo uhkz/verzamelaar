@@ -18,3 +18,8 @@ body {
 .btn:hover, .signup:hover {
     background-color: #f0eec92c;
 }
+
+.banner {
+    opacity: 0.9;
+    object-fit: cover;
+}
