@@ -65,10 +65,47 @@ function createUser($conn, $name, $lname, $email, $uid, $pwd) {
     $stmt->bindParam(':pwd', $pwd);
 
     if ($stmt->execute()) {
-        header("location: ../index.php?success");
+        header("location: ../registration.php?success");
         exit();
     } else {
         header("location: ../registration.php?error-stmtfailed");
         exit();
     }
+}
+
+function emptyInputLogin($uid, $pwd){
+    $result;
+
+    if ( empty($uid) && empty($pwd)) {
+        $result = true;
+    } else {
+        $result = false;
+    }
+    return $result;
+}
+
+function loginUser($conn, $username, $pwd) {
+    $uidExists = uidExists($conn, $username, $username);
+    
+    if ($uidExists === false) {
+        header("location: login.php?error=wronglogin");
+        exit();
+    }
+    
+    $pwddb = $uidExists["pwd"];
+
+    $checkPwd = password_verify($pwd, $pwddb);
+
+    if ($checkPwd === false) {
+        header("location: ../login.php?error=wronglogin");
+        exit();
+    }
+    else if ($checkPwd === true) {
+        session_start();
+        $_SESSION["userid"] = $uidExists["usersId"];
+        $_SESSION["username"] = $uidExists["username"];
+        header("location: ../index.php?loggedin");
+        exit();
+    }
+    
 }
