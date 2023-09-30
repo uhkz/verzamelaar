@@ -12,7 +12,7 @@
               <label for="" class="form-label">Password</label>
               <input type="password" class="form-control" name="pwd" placeholder="Password">
             </div>
-            <button type="submit" class="btn w-100">Sign in</button>
+            <button type="submit" name="submit" class="btn w-100">Sign in</button>
         <?php
         if (isset($_GET["error"])) {
             if ($_GET["error"] == "emptyinput"){

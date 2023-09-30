@@ -1,5 +1,7 @@
 <?php
 
+//functies voor registreren
+
 function emptyInput($name, $lname, $email, $uid, $pwd, $pwdRepeat){
     $result;
 
@@ -52,7 +54,7 @@ function uidExists($conn, $uid, $email){
 
     $resultData = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    return $resultData; // Returns an associative array or false
+    return $resultData; 
 }
 
 function createUser($conn, $name, $lname, $email, $uid, $pwd) {
@@ -73,10 +75,14 @@ function createUser($conn, $name, $lname, $email, $uid, $pwd) {
     }
 }
 
+
+//Hieronder log in
+
+
 function emptyInputLogin($uid, $pwd){
     $result;
 
-    if ( empty($uid) && empty($pwd)) {
+    if (empty($uid) && empty($pwd)) {
         $result = true;
     } else {
         $result = false;
@@ -88,19 +94,17 @@ function loginUser($conn, $username, $pwd) {
     $uidExists = uidExists($conn, $username, $username);
     
     if ($uidExists === false) {
-        header("location: login.php?error=wronglogin");
+        header("location: ../pages/login.php?error=userdoesntexist");
         exit();
     }
     
     $pwddb = $uidExists["pwd"];
 
-    $checkPwd = password_verify($pwd, $pwddb);
-
-    if ($checkPwd === false) {
-        header("location: ../login.php?error=wronglogin");
+    if ($pwd !== $pwddb) {
+        header("location: ../pages/login.php?error=wronglogin");
         exit();
     }
-    else if ($checkPwd === true) {
+    else {
         session_start();
         $_SESSION["userid"] = $uidExists["usersId"];
         $_SESSION["username"] = $uidExists["username"];

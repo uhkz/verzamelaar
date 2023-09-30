@@ -1,7 +1,4 @@
 <?php
-
-
-
 if (isset($_POST["submit"])) {
     $username = $_POST["uid"];
     $pwd = $_POST["pwd"];
@@ -10,7 +7,7 @@ if (isset($_POST["submit"])) {
     require_once 'functions.inc.php';
 
     if (emptyInputLogin($username, $pwd) !== false) {
-        header("location: ../login.php?error=emptyinput");
+        header("location: ../pages/login.php?error=emptyinput");
         exit();
     }
     
@@ -20,4 +17,3 @@ if (isset($_POST["submit"])) {
     exit();
 }
 
-?>
