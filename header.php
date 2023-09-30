@@ -40,8 +40,9 @@
 
       <?php 
         if (isset($_SESSION["username"])) {
-            echo "logged in";
-            echo "log out";
+            $username = $_SESSION["username"];
+            echo "<a class='btn me-3 signup d-none d-lg-block' href='/pages/profile.php' role='button'>" . $username ."</a> ";
+            echo "<a class='btn me-3 signup d-none d-lg-block' href='includes/logout.inc.php' role='button'><i class='fa-solid fa-arrow-right-from-bracket'></i></a>";
         } else {
             echo "<a class='btn me-3 signup d-none d-lg-block' href='/pages/login.php' role='button'><i class='fa-solid fa-user'></i></a> ";
             echo "<a class='btn me-3 signup d-none d-lg-block' href='pages/registration.php' role='button'><i class='fa-solid fa-user-pen'></i></a>";
