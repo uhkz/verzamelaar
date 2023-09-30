@@ -39,54 +39,42 @@
             data-bs-auto-close="outside">
             <i class="fa-solid fa-user"></i>
           </button>
-          <form class="dropdown-menu p-3">
+          <!--Login-->
+          <form action="includes/login.inc.php" method="post" class="dropdown-menu p-3">
             <div class="mb-3">
-              <label for="" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="" placeholder="email@example.com">
+              <label for="" class="form-label">Username</label>
+              <input type="text" class="form-control" name="uid" placeholder="username">
             </div>
             <div class="mb-3">
               <label for="" class="form-label">Password</label>
-              <input type="password" class="form-control" id="" placeholder="Password">
-            </div>
-            <div class="mb-3">
-              <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="">
-                <label class="form-check-label" for="">
-                  Remember me
-                </label>
-              </div>
+              <input type="password" class="form-control" name="pwd" placeholder="Password">
             </div>
             <button type="submit" class="btn w-100">Sign in</button>
           </form>
+          <!---->
         </div>
-        <a class="btn me-3 signup d-lg-none" href="#" role="button"><i class="fa-solid fa-user-pen"></i></a>
+        <a class="btn me-3 signup d-lg-none" href="/pages/registration.php" role="button"><i class="fa-solid fa-user-pen"></i></a>
       </div>
       <div class="btn-group dropstart  me-3 d-none d-lg-block">
         <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
           data-bs-auto-close="outside">
           <i class="fa-solid fa-user"></i>
         </button>
-        <form class="dropdown-menu p-3">
+        <!--Login-->
+        <form action="includes/login.inc.php" method="post" class="dropdown-menu p-3">
           <div class="mb-3">
-            <label for="" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="" placeholder="email@example.com">
+            <label for="" class="form-label">Username</label>
+            <input type="text" class="form-control" name="uid" placeholder="Username">
           </div>
           <div class="mb-3">
             <label for="" class="form-label">Password</label>
-            <input type="password" class="form-control" id="" placeholder="Password">
+            <input type="password" class="form-control" name="pwd" placeholder="Password">
           </div>
-          <div class="mb-3">
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="">
-              <label class="form-check-label" for="">
-                Remember me
-              </label>
-            </div>
-          </div>
-          <button type="submit" class="btn">Sign in</button>
+          <button type="submit" class="btn w-100">Sign in</button>
         </form>
+        <!---->
       </div>
-      <a class="btn me-3 signup d-none d-lg-block" href="#" role="button"><i class="fa-solid fa-user-pen"></i></a>
+      <a class="btn me-3 signup d-none d-lg-block" href="pages/registration.php" role="button"><i class="fa-solid fa-user-pen"></i></a>
     </div>
   </nav>
   <!--EINDE NAVBAR-->
