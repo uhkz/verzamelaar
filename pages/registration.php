@@ -23,11 +23,14 @@ include('../header.php')
             } else if ($_GET["error"] == "passwordsdontmatch"){
                 echo "<p>The passwords are not matched!</p>";
             }  else if ($_GET["error"] == "usernametaken"){
-                echo "<p>This username already exists!</p>";
+                echo "<p>This username or email already exists!</p>";
             } else if ($_GET["error"] == "stmtfailed"){
                 echo "<p>Something went wrong. Please try again.</p>";
-            } else if ($_GET["error"] == "none"){
+            } else if ($_GET["error"] == "succes"){
                 echo "<p>you have succesfully signed up!</p>";
+            }
+            if (isset($_GET["success"])) {
+                echo "<p>You have successfully signed up!</p>";
             }
         }
     ?>
