@@ -67,7 +67,7 @@ function createUser($conn, $name, $lname, $email, $uid, $pwd) {
     $stmt->bindParam(':pwd', $pwd);
 
     if ($stmt->execute()) {
-        header("location: ../pages/registration.php?success=1");
+        header("location: ../pages/login.php?success");
         exit();
     } else {
         header("location: ../registration.php?error-stmtfailed");

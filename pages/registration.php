@@ -1,18 +1,48 @@
 <?php
 include('../header.php')
 ?>
-    <section class="signup-form">
-        <h2>Sign up</h2>
-        <form action="../includes/signup.inc.php" method="post">
-            <input type="text" name="name" placeholder="First name">
-            <input type="text" name="lname" placeholder="Last name">
-            <input type="text" name="email" placeholder="Email">
-            <input type="text" name="uid" placeholder="Username">
-            <input type="password" name="pwd" placeholder="Password">
-            <input type="password" name="pwdrepeat" placeholder="Repeat password">
-            <button type="submit" name="submit">Sign Up</button>
-        </form>
-    <?php
+<section class="">
+<form action="../includes/signup.inc.php" method="post">
+  <div class="container mt-3">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 pt-2 pb-2 text-start">
+            <div class="mb-md-5 mt-md-4 ">
+              <h2 class="fw-bold mb-2 text-uppercase text-center">Sign up</h2>
+              <p class="text-white-50 mb-3 text-center">Please fill in all information correctly.</p>
+
+              <div class="form-outline form-white mb-2">
+                <label class="form-label" for="name">First name</label>
+                <input type="text" name="name" id="name" class="form-control form-control" />
+              </div>
+
+              <div class="form-outline form-white mb-2">
+                <label class="form-label" for="lname">Last name</label>
+                <input type="text" name="lname" id="lname" class="form-control form-control " />
+              </div>
+            
+              <div class="form-outline form-white mb-2">
+                <label class="form-label" for="email">Email</label>
+                <input type="email" name="email" id="email" class="form-control form-control " />
+              </div>
+            
+              <div class="form-outline form-white mb-2">
+                <label class="form-label" for="username">Username</label>
+                <input type="text" name="uid" id="username" class="form-control form-control " />
+              </div>
+            
+              <div class="form-outline form-white mb-1">
+                <label class="form-label" for="pwd">Password</label>
+                <input type="password" name="pwd" id="pwd" class="form-control form-control " />
+              </div>
+            
+              <div class="form-outline form-white mb-3">
+                <label class="form-label" for="pwd">Repeat password</label>
+                <input type="password" name="pwdrepeat" id="pwdrepeat" class="form-control form-control " />
+              </div>
+              <button class="btn btn-outline-light btn-lg px-5" name="submit" type="submit">Sign Up</button><br><br>
+              <?php
         if (isset($_GET["error"])) {
             if ($_GET["error"] == "emptyinput"){
                 echo "<p>Fill in all fields!</p>";
@@ -34,7 +64,14 @@ include('../header.php')
             }
         }
     ?>
-
-    </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+</section>
+    
 </body>
 </html>
