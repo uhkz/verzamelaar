@@ -5,9 +5,6 @@
     }
 ?>
 
-    
-<div class="row">
-    <div class="col-sm-2">
 <div class="card " style="width: 18rem;">
   <img src="../media/profile.png" class="card-img-top" alt="...">
   <div class="card-body">
@@ -20,20 +17,4 @@
     <a href="#" class="btn disabled">Edit</a>
   </div>
 </div>
-</div>
-<div class="col-sm-6">
-    <h2>Te koop</h2>
-    <grid>
-</div>
 
-</div>
-</div>
-
-
-
-
-
-<div class="verzameling-container">
-    <h2>verzameling</h2>
-    <grid>
-</div>
