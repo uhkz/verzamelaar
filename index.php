@@ -13,7 +13,7 @@
     <div class="row mt-5">
       <div class="col fs-4">Uitgelichte items</div>
     </div>
-    <!--row 3-->
+    <!--row 1-->
     <div class="items-grid row mt-4">
       <div class="col-sm lh-3 me-5">
         <img src="/media/car-example1.avif" alt="">
