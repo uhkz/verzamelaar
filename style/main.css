@@ -37,4 +37,14 @@ body {
     max-width: 100%;
   }
 
+  .profile {
+    background-color: #636354;
+    height: 40vh;
+  }
+
+  .item {
+    background-color: #636354;
+    height: 15vh;
+    width: 10vw;
+  }
  
