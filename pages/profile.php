@@ -5,8 +5,6 @@
     }
 ?>
 
-
-
 <div class="container mt-3 teKoop">
   <div class="row gap-1">
     <div class="col-md-3 profile me-3"><?php echo "<h1>Profile: $username</h1>"?></div>
@@ -24,7 +22,6 @@
   </div>
   </div>
 </div>
-
 
 <div class="container mt-3 verzameling">
   <div class="row gap-1">
