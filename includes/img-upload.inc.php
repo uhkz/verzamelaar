@@ -3,7 +3,7 @@
 if (isset($_POST['submit'])) {
 
     $newFileName = $_POST['filename'];
-    if ($_POST['filename']){
+    if (empty($newFileName)) {
         $newFileName = "uploads";
     } else {
         $newFileName = strtolower(str_replace(" ", "-", $newFileName));
@@ -27,20 +27,47 @@ if (isset($_POST['submit'])) {
 
     if (in_array($fileActualExt, $allowed)) {
         if ($fileError === 0) {
-            if ($fileSize < 2000000){
+            if ($fileSize < 2000000) {
+                $imageFullName = $newFileName . "." . uniqid("", true) . "." . $fileActualExt;
+                $fileDestination = "../media/gallery/" . $imageFullName;
 
+                $dbname = "dbVerzamelaar.db";
+                $conn = new PDO("sqlite:$dbname");
+                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                if (empty($imageTitle) || empty($imageDesc)) {
+                    header("Location: ../pages/profile.php?upload=empty");
+                    exit();
+                } else {
+                    $sql = "SELECT * FROM uploads;";
+                    $stmt = $conn->query($sql);
+                    $rowCount = count($stmt->fetchAll());
+
+                    $setImageOrder = $rowCount + 1;
+
+                    $sql = "INSERT INTO uploads (titleUploads, descUploads, imgFullNameUploads, orderUploads) VALUES (:title, :desc, :imgFullName, :orderUploads);";
+                    $stmt = $conn->prepare($sql);
+                    $stmt->bindParam(':title', $imageTitle);
+                    $stmt->bindParam(':desc', $imageDesc);
+                    $stmt->bindParam(':imgFullName', $imageFullName);
+                    $stmt->bindParam(':orderUploads', $setImageOrder);
+                    $stmt->execute();
+
+                    move_uploaded_file($fileTempName, $fileDestination);
+
+                    header("Location: ../pages/profile.php?upload=success");
+                }
             } else {
-                echo "file to big";
+                echo "File too big";
                 exit();
             }
         } else {
-            echo "Error";
+            echo "Error uploading file";
             exit();
         }
     } else {
-        echo "only jpg jpeg png allowed";
+        echo "Only JPG, JPEG, PNG files are allowed";
         exit();
     }
-
-
 }
+?>
