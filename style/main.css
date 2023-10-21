@@ -1,3 +1,6 @@
+*{
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
 body {
     background-color: #A3A289;
 }
@@ -22,16 +25,17 @@ body {
 }
 
 .banner {
-    opacity: 1;
-    object-fit: cover;
+    background-image: url(/media/photobanner.jpeg);
+    background-size: cover;
+    background-position: -50px;
+    height: 50vh;
+
+    .banner-text {
+      color: white;
+      padding-top: 5vh;
+    
+    }
 }
-.centered {
-    position: absolute;
-    color: white;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
 
   .items-grid img {
     max-width: 100%;

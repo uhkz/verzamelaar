@@ -3,12 +3,12 @@
   ?>
   <div class="container">
     <div class="banner-container">
-      <img src="/media/photobanner.jpeg" class="img-fluid banner" alt="...">
-      <div class="text-center centered">
-        <h1>TITEL WELKOM</h1>
-        <p>Hier komt mooie text in een passend font.</p>
-        <p>(moet nog responsive)</p>
+      <div class="container-fluid text-center banner">
+      <div class="banner-text">
+      <h1>Welkom bij COLCARS</h1>
+      <p>Ontdek de passie voor auto's.</p>
       </div>
+    </div>
     </div>
     <div class="row mt-5">
       <div class="col fs-4">Uitgelichte items</div>

@@ -8,6 +8,10 @@
   <link rel="icon" type="image/x-icon" href="/media/favicon.ico">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--FONT-->
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap');
+</style>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -18,7 +22,7 @@
   <!--NAVBAR-->
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="../../index.php">LOGO</a>
+      <a class="navbar-brand" href="../../index.php"><img class="logo" width="60" height="48" src="../../media/logo.png" alt=""></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
