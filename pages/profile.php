@@ -1,7 +1,20 @@
 <?php 
     include ('../header.php');
-    if (isset($_SESSION["username"])) {
+    $username = ""; // Initialize the username variable
+
+    // Check if the 'user' parameter is set in the URL
+    if (isset($_GET["user"])) {
+        $requestedUser = $_GET["user"];
+
+        // Assuming $requestedUser is the username
+        $username = $requestedUser;
+    } else if (isset($_SESSION["username"])) {
+        // If the 'user' parameter is not set, check the session for the username
         $username = $_SESSION["username"];
+    } else {
+        // Redirect the user if the user identifier is not provided
+        header("Location: ../index.php");
+        exit();
     }
 ?>
 
@@ -9,7 +22,7 @@
   <div class="row gap-1">
     <div class="col-md-3 profile me-3"><?php echo "<h1>$username</h1>"?>
     <?php 
-    if (isset($_SESSION['username'])){
+    if (isset($_SESSION['username']) && $_SESSION['username'] === $username){
       echo '<div class="img-upload">
       <p>Voeg iets aan je verzameling toe.</p>
       <form action="../includes/img-upload.inc.php" method="post" enctype="multipart/form-data">
@@ -28,22 +41,25 @@
       <div class="row gap-3">
 
     <?php
-$dbname = "../includes/dbVerzamelaar.db";
+    $dbname = "../includes/dbVerzamelaar.db";
 
-try {
-    $conn = new PDO("sqlite:$dbname");
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    try {
+        $conn = new PDO("sqlite:$dbname");
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = "SELECT * FROM uploads ORDER BY orderUploads DESC;";
-    $stmt = $conn->query($sql);
+        // Assuming 'usersId' is the primary key in the 'users' table
+        $sql = "SELECT * FROM uploads WHERE userId = (SELECT usersId FROM users WHERE username = :username) ORDER BY orderUploads DESC;";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':username', $username);
+        $stmt->execute();
 
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        echo '<div class="col-md-2 item" style="background-image: url(../media/gallery/'.$row["imgFullNameUploads"].');"></div>';
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo '<div class="col-md-2 item" style="background-image: url(../media/gallery/'.$row["imgFullNameUploads"].');"></div>';
+        }
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
     }
-} catch (PDOException $e) {
-    echo "Error: " . $e->getMessage();
-}
-?>
+    ?>
   </div>
   </div>
 </div>
@@ -53,21 +69,7 @@ try {
     <div class="col-md-3 me-3"></div>
     <div class="col-md-8">
       <h2>Te Koop</h2>
-      
-     <!-- <div class="row gap-1">
-    <div class="col-md-2 item">image</div>
-    <div class="col-md-2 item">image</div>
-    <div class="col-md-2 item">image</div>
-    <div class="col-md-2 item">image</div>
-    <div class="col-md-2 item">image</div>
-    <div class="col-md-2 item">image</div>
-    <div class="col-md-2 item">image</div>
-    <div class="col-md-2 item">image</div>
+      <!-- Add the content you want to display here -->
+    </div>
   </div>
-  </div> -->
 </div>
-
-
-
-
-
