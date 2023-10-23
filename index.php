@@ -1,5 +1,6 @@
   <?php 
   include('header.php');
+  include('includes/dbh.inc.php');
   ?>
   <div class="container">
     <div class="banner-container">
@@ -11,7 +12,7 @@
     </div>
     </div>
     <div class="row mt-5">
-      <div class="col fs-4">Uitgelichte items</div>
+      <div class="col fs-4">Uitgelichte auto's</div>
     </div>
     <!--row 1-->
     <div class="items-grid row mt-4">
