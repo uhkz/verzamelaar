@@ -33,10 +33,17 @@
             <a class="nav-link active" aria-current="page" href="../../index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Dashboard</a>
+          <?php
+          if (isset($_SESSION["username"])) {
+            $username = $_SESSION["username"];
+             echo '<a class="nav-link" href="../pages/profile.php">Profile</a>';
+          } else {
+            echo '<a class="nav-link" href="/pages/login.php">Profile</a>';
+          }
+          ?>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Shop</a>
+            <a class="nav-link" href="#" onclick="showMessage()">Shop</a>
           </li>
         </ul>
         <a class="btn me-3 signup d-lg-none" href="../pages/login.php" role="button"><i class="fa-solid fa-user"></i></a> 
@@ -53,8 +60,7 @@
             echo "<a class='btn me-3 signup d-none d-lg-block' href='../pages/registration.php' role='button'><i class='fa-solid fa-user-pen'></i></a>";
         }
       ?>
-      <!--<a class="btn me-3 signup d-none d-lg-block" href="/pages/login.php" role="button"><i class="fa-solid fa-user"></i></a> 
-      <a class="btn me-3 signup d-none d-lg-block" href="pages/registration.php" role="button"><i class="fa-solid fa-user-pen"></i></a> -->
-    </div>
+      </div>
   </nav>
   <!--EINDE NAVBAR-->
+  <script src="../scripts/alert.js"></script>
