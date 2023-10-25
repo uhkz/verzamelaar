@@ -47,7 +47,6 @@
         $conn = new PDO("sqlite:$dbname");
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        // Assuming 'usersId' is the primary key in the 'users' table
         $sql = "SELECT * FROM uploads WHERE userId = (SELECT usersId FROM users WHERE username = :username) ORDER BY orderUploads DESC;";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':username', $username);
