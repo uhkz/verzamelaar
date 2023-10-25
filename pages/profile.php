@@ -53,7 +53,15 @@
         $stmt->execute();
 
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo '<div class="col-md-2 item" style="background-image: url(../media/gallery/'.$row["imgFullNameUploads"].');"></div>';
+          echo '<div class="col-md-2 item">';
+          echo '<img src="../media/gallery/'.$row["imgFullNameUploads"].'" class="img-fluid" alt="'.$row['titleUploads'].'">';
+          echo '<div>';
+          echo '<p class="fs-4 mb-0">' . $row['titleUploads'] . '</p>';
+          
+          echo '</div>';
+          echo '</div>';
+          
+            
         }
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();

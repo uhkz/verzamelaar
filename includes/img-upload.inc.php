@@ -58,7 +58,7 @@ if (isset($_POST['submit'])) {
                     exit();
                 }
 
-                $setImageOrder = 1; // You might want to change this based on your logic
+                $setImageOrder = 1; 
 
                 $sql = "INSERT INTO uploads (titleUploads, descUploads, imgFullNameUploads, orderUploads, userId) VALUES (:title, :desc, :imgFullName, :orderUploads, :userId);";
                 $stmt = $conn->prepare($sql);

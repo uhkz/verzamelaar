@@ -4,6 +4,7 @@
 body {
     background-color: #A3A289;
 }
+
 .btn:hover, a:hover {
     color: #e3e1bfaa!important;
 }
@@ -47,9 +48,8 @@ body {
   }
 
   .item {
-    background-color: #636354;
     height: 15vh;
     width: 15vw;
-    background-size: contain;
+    
   }
  
