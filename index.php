@@ -29,15 +29,15 @@
 
       // Loop to create 3 rows
 for ($i = 0; $i < 3; $i++) {
-  echo '<div class="row mt-4">';
+  echo '<div class="row mt-5 ms-3">';
   // Loop to create 3 columns in each row
   for ($j = 0; $j < 3; $j++) {
       $row = $stmt->fetch(PDO::FETCH_ASSOC);
       if ($row) {
           $modalId = 'imageModal' . $i . $j; 
-          echo '<div class="col-lg lh-3 me-5 fadein">';
+          echo '<div class="col lh-3 me-5 fadein">';
           echo '<img src="/media/gallery/' . $row['imgFullNameUploads'] . '" alt="Car Image" class="img-fluid carImage shadow" data-bs-toggle="modal" data-bs-target="#' . $modalId . '">';
-          echo '<p class="fs-4 mb-0">' . $row['titleUploads'] . '</p>';
+          echo '<p class="text-center titles mb-0">' . $row['titleUploads'] . '</p>';
           echo '</div>';
           // Modal Code
 

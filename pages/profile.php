@@ -71,8 +71,8 @@
    
   </div>
     <div class="col-md-8">
-      <h2><?php echo "<h2>$username's " ?>Verzameling</h2>
-      <div class="row gap-3">
+      <h2><?php echo "<h2>$username's " ?>verzameling</h2>
+      <div class="row gap-5">
 
       <?php
 $dbname = "../includes/dbVerzamelaar.db";
@@ -92,7 +92,7 @@ try {
         echo '<div class="col-md-2 item fadein">';
         echo '<img src="../media/gallery/'.$row["imgFullNameUploads"].'" class="img-fluid" alt="'.$row['titleUploads'].'" data-bs-toggle="modal" data-bs-target="#'.$modalId.'">'; // Adding data-bs attributes for the modal
         echo '<div>';
-        echo '<p class="fs-10 mb-0">' . $row['titleUploads'] . '</p>';
+        echo '<p class="titles text-center mb-0">' . $row['titleUploads'] . '</p>';
         echo '</div>';
         echo '</div>';
 
@@ -124,7 +124,7 @@ try {
   </div>
 </div>
 
-<div class="container mt-3 teKoop">
+<div class="container mt-5 teKoop">
   <div class="row gap-1">
     <div class="col-md-3 me-3"></div>
     <div class="col-md-8">

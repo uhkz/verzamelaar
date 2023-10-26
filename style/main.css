@@ -52,7 +52,9 @@ body {
     }
 }
 
-
+.titles {
+  font-size: 1vw;
+}
 .fadein img{
   cursor: pointer;
   transition: 1s ease;
@@ -64,35 +66,35 @@ body {
   }
 
   .items-grid img {
-    max-width: 110%;
+    max-width: 100%;
     height: 90%;
     object-fit: cover;
   }
-
+  
   .modalImg {
     width: 100%;
+    height: auto;
   }
-
+  
   .profile {
     background-color: #D4D4D4;
     height: 40vh;
   }
-
+  
   .item {
     width: 15vw;
-    height: 15vh;
-    
+    max-width: 100%;
+    height: auto;
+   
 }
+
 
 .item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
 }
 
- 
   .footer {
     background-color: #D4D4D4;
   }
-
-  

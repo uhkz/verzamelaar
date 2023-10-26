@@ -13,3 +13,4 @@ functies die nog moeten komen:
 
 Bugs:
 - je kunt nu nog elke username die niet bestaat invoeren in de url.
+- nog niet perfect voor mobile.
