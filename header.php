@@ -16,6 +16,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="/style/main.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/b2f72f1c34.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -46,18 +47,18 @@
             <a class="nav-link" href="#" onclick="showMessage()">Shop</a>
           </li>
         </ul>
-        <a class="btn me-3 signup d-lg-none" href="../pages/login.php" role="button"><i class="fa-solid fa-user"></i></a> 
-        <a class="btn me-3 signup d-lg-none" href="../pages/registration.php" role="button"><i class="fa-solid fa-user-pen"></i></a>
+        <a class="btn btn2 me-3 signup d-lg-none" href="../pages/login.php" role="button"><i class="fa-solid fa-user"></i></a> 
+        <a class="btn btn2 me-3 signup d-lg-none" href="../pages/registration.php" role="button"><i class="fa-solid fa-user-pen"></i></a>
       </div>
 
       <?php 
         if (isset($_SESSION["username"])) {
             $username = $_SESSION["username"];
-            echo "<a class='btn me-3 signup d-none d-lg-block' href='/pages/profile.php' role='button'>" . $username ."</a> ";
-            echo "<a class='btn me-3 signup d-none d-lg-block' href='../includes/logout.inc.php' role='button'><i class='fa-solid fa-arrow-right-from-bracket'></i></a>";
+            echo "<a class='btn btn2 me-3 signup d-none d-lg-block' href='/pages/profile.php' role='button'>" . $username ."</a> ";
+            echo "<a class='btn btn2 me-3 signup d-none d-lg-block' href='../includes/logout.inc.php' role='button'><i class='fa-solid fa-arrow-right-from-bracket'></i></a>";
         } else {
-            echo "<a class='btn me-3 signup d-none d-lg-block' href='../pages/login.php' role='button'><i class='fa-solid fa-user'></i></a> ";
-            echo "<a class='btn me-3 signup d-none d-lg-block' href='../pages/registration.php' role='button'><i class='fa-solid fa-user-pen'></i></a>";
+            echo "<a class='btn btn2 me-3 signup d-none d-lg-block' href='../pages/login.php' role='button'><i class='fa-solid fa-user'></i></a> ";
+            echo "<a class='btn btn2 me-3 signup d-none d-lg-block' href='../pages/registration.php' role='button'><i class='fa-solid fa-user-pen'></i></a>";
         }
       ?>
       </div>

@@ -38,8 +38,8 @@ for ($i = 0; $i < 3; $i++) {
       $row = $stmt->fetch(PDO::FETCH_ASSOC);
       if ($row) {
           $modalId = 'imageModal' . $i . $j; 
-          echo '<div class="col-sm lh-3 me-5">';
-          echo '<img src="/media/gallery/' . $row['imgFullNameUploads'] . '" alt="Car Image" class="img-fluid" data-bs-toggle="modal" data-bs-target="#' . $modalId . '">';
+          echo '<div class="col-lg lh-3 me-5 fadein">';
+          echo '<img src="/media/gallery/' . $row['imgFullNameUploads'] . '" alt="Car Image" class="img-fluid carImage shadow" data-bs-toggle="modal" data-bs-target="#' . $modalId . '">';
           echo '<p class="fs-4 mb-0">' . $row['titleUploads'] . '</p>';
           echo '</div>';
           // Modal Code
@@ -87,8 +87,10 @@ for ($i = 0; $i < 3; $i++) {
 </div>
  </div>
 
-
- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+ <?php
+include ('footer.php');
+?>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 </body>
 

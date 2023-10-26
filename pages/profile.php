@@ -21,10 +21,10 @@
 <div class="container mt-3 verzameling">
   <div class="row gap-1">
     <div class="col-md-3 profile me-3"><?php echo "<h1>$username</h1>"?>
-    <img src="../media/profile.png" class="img-thumbnail" width="75" height="75"  alt="..."><br><br>
+    <img src="../media/profile.png" class="img-thumbnail" width="75" height="75"  alt="..."><br>
     <?php
     if (isset($_SESSION['username']) && $_SESSION['username'] === $username){ 
-     echo '<button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#addModal">
+     echo '<button type="button" class="mt-5 btn btn2 "  data-bs-toggle="modal" data-bs-target="#addModal">
     <p>Voeg toe</p></button>';}
 ?>
 <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -91,8 +91,8 @@ try {
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $modalId = 'modal_' . $row['idUploads']; // Generate a unique modal ID
 
-        echo '<div class="col-md-2 item">';
-        echo '<img src="../media/gallery/'.$row["imgFullNameUploads"].'" class="img-fluid" alt="'.$row['titleUploads'].'" data-bs-toggle="modal" data-bs-target="#'.$modalId.'">'; // Adding data-bs attributes for the modal
+        echo '<div class="col-md-2 item fadein">';
+        echo '<img src="../media/gallery/'.$row["imgFullNameUploads"].'" class="img-fluid ratio-4x3" alt="'.$row['titleUploads'].'" data-bs-toggle="modal" data-bs-target="#'.$modalId.'">'; // Adding data-bs attributes for the modal
         echo '<div>';
         echo '<p class="fs-10 mb-0">' . $row['titleUploads'] . '</p>';
         echo '</div>';
