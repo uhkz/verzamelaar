@@ -48,9 +48,17 @@
             <a class="nav-link" href="#" onclick="showMessage()">Shop</a>
           </li>
         </ul>
-        <a class="btn btn2 me-3 signup d-lg-none" href="../pages/login.php" role="button"><i class="fa-solid fa-user"></i></a> 
-        <a class="btn btn2 me-3 signup d-lg-none" href="../pages/registration.php" role="button"><i class="fa-solid fa-user-pen"></i></a>
-      </div>
+        <?php 
+         if (isset($_SESSION["username"])) {
+          $username = $_SESSION["username"];
+        echo '<a class="btn btn2 me-3 signup d-lg-none" href="../pages/profile.php" role="button"><i class="fa-solid fa-user"></i></a>';
+        echo '<a class="btn btn2 me-3 signup d-lg-none" href="../includes/logout.inc.php" role="button"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>';
+        } else {
+          echo '<a class="btn btn2 me-3 signup d-lg-none" href="../pages/login.php" role="button"><i class="fa-solid fa-user"></i></a>';
+          echo '<a class="btn btn2 me-3 signup d-lg-none" href="../pages/registration.php" role="button"><i class="fa-solid fa-user-pen"></i></a>';
+          
+        }?>
+        </div>
 
       <?php 
         if (isset($_SESSION["username"])) {
