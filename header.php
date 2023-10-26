@@ -40,7 +40,7 @@
             $username = $_SESSION["username"];
              echo '<a class="nav-link" href="../pages/profile.php">Profile</a>';
           } else {
-            echo '<a class="nav-link" href="/pages/login.php">Profile</a>';
+            echo '<a class="nav-link" href="../pages/login.php">Profile</a>';
           }
           ?>
           </li>
@@ -63,7 +63,7 @@
       <?php 
         if (isset($_SESSION["username"])) {
             $username = $_SESSION["username"];
-            echo "<a class='btn btn2 me-3 signup d-none d-lg-block' href='/pages/profile.php' role='button'>" . $username ."</a> ";
+            echo "<a class='btn btn2 me-3 signup d-none d-lg-block' href='../pages/profile.php' role='button'>" . $username ."</a> ";
             echo "<a class='btn btn2 me-3 signup d-none d-lg-block' href='../includes/logout.inc.php' role='button'><i class='fa-solid fa-arrow-right-from-bracket'></i></a>";
         } else {
             echo "<a class='btn btn2 me-3 signup d-none d-lg-block' href='../pages/login.php' role='button'><i class='fa-solid fa-user'></i></a> ";
