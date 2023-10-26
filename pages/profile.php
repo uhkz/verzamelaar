@@ -58,14 +58,16 @@
           </div>
       
   </div>
+   <?php } ?>
       </div>
       <div class="modal-footer">
         <button type="submit" name="submit" class="btn btn-primary">Upload</button>
-      </form></div>
+      </form>
+      </div>
     </div>
   </div>
 </div>
-<?php } ?>
+
    
   </div>
     <div class="col-md-8">
