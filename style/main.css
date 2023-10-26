@@ -1,39 +1,53 @@
 *{
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
-body {
-    background-color: #A3A289;
+
+#preloader {
+  position: fixed;
+  z-index: 9999;
+  background: black url(/media/loader.gif) no-repeat center;
+  background-size: 20%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.btn2:hover, a:hover {
-    color: #e3e1bfaa!important;
+body {
+    background-color: #F0EFEB;
+}
+
+ a:hover {
+    color: #a0a0a0aa!important;
 }
 
 .navbar {
-    background-color: #636354;
+    background-color: #D4D4D4;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
+    z-index: 999;
 
 }
 
 .btn2, .signup {
    
     color: black;
-    background-color: #F0EEC9;
+    background-color: #85858500;
 }
 
-.btn2:hover, .signup:hover {
-    background-color: #f0eec92c;
+.signup:hover {
+    color: #a0a0a0aa;
 }
 
 .banner {
     background-image: url(/media/photobanner.jpeg);
     background-size: cover;
-    background-position: -50px;
+    background-position: center;
     height: 50vh;
 
     .banner-text {
-      color: white;
-      padding-top: 5vh;
+      color: black;
+      padding-top: 8vh;
     
     }
 }
@@ -55,17 +69,30 @@ body {
     object-fit: cover;
   }
 
+  .modalImg {
+    width: 100%;
+  }
+
   .profile {
-    background-color: #636354;
+    background-color: #D4D4D4;
     height: 40vh;
   }
 
   .item {
-    height: 15vh;
     width: 15vw;
+    height: 15vh;
     
-  }
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
  
   .footer {
-    background-color: #636354;
+    background-color: #D4D4D4;
   }
+
+  

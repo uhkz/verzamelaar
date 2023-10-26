@@ -20,6 +20,7 @@
   <script src="https://kit.fontawesome.com/b2f72f1c34.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
   <!--NAVBAR-->
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container-fluid">
@@ -64,4 +65,5 @@
       </div>
   </nav>
   <!--EINDE NAVBAR-->
+  
   <script src="../scripts/alert.js"></script>

@@ -42,6 +42,8 @@ include('../header.php')
                 <input type="password" name="pwdrepeat" id="pwdrepeat" class="form-control form-control " />
               </div>
               <button class="btn btn-outline-light btn-lg px-5" name="submit" type="submit">Sign Up</button><br><br>
+              <p class="mb-0">Already have an account? <a href="login.php" class="text-white-50 fw-bold">Sign In</a>
+              </p>
               <?php
         if (isset($_GET["error"])) {
             if ($_GET["error"] == "emptyinput"){

@@ -1,18 +1,18 @@
+<div id="preloader"></div>
   <?php 
   include('header.php');
-
   ?>
   <div class="container">
     <div class="banner-container">
       <div class="container-fluid text-center banner">
       <div class="banner-text">
-      <h1>Welkom bij COLCARS</h1>
-      <p>Ontdek de passie voor auto's.</p>
+      <h1 class="fw-bold">Welkom bij COLCARS</h1>
+      <h4 class="fw-bold">Ontdek de passie voor auto's.</h4>
       </div>
     </div>
     </div>
     <div class="row mt-5">
-      <div class="col fs-4">Uitgelichte auto's</div>
+      <div class="col fs-4"><h3 class="fw-bold">Uitgelichte auto's</h3></div>
     </div>
     
     <div class="items-grid row mt-4">
@@ -26,9 +26,6 @@
         $sql = "SELECT * FROM uploads ORDER BY RANDOM() LIMIT 9";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
-
-
-
 
       // Loop to create 3 rows
 for ($i = 0; $i < 3; $i++) {
@@ -63,7 +60,7 @@ for ($i = 0; $i < 3; $i++) {
           echo '</div>';
           echo '<div class="modal-body">';
           echo '<h3>Van: ' . $username . '</h3>';
-          echo '<img src="/media/gallery/' . $row['imgFullNameUploads'] . '" alt="Car Image" class="img-fluid">';
+          echo '<img src="/media/gallery/' . $row['imgFullNameUploads'] . '" alt="Car Image" class="img-fluid modalImg">';
           echo '<p>' . $row['descUploads'] . '</p>';
           echo '</div>';
           echo '<h4 class="ms-2">Ga naar het profiel van <a href="/pages/profile.php?user=' . $username . '">' . $username . '</a></h4>';
@@ -77,21 +74,19 @@ for ($i = 0; $i < 3; $i++) {
       }
   }
   echo '</div>';
-}
-
-        
+} 
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
     }
     ?>
 </div>
  </div>
-
  <?php
 include ('footer.php');
 ?>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+<script src="../scripts/preloader.js"></script>
 </body>
 
 </html>

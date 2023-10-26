@@ -21,11 +21,12 @@
 <div class="container mt-3 verzameling">
   <div class="row gap-1">
     <div class="col-md-3 profile me-3"><?php echo "<h1>$username</h1>"?>
-    <img src="../media/profile.png" class="img-thumbnail" width="75" height="75"  alt="..."><br>
+    <img src="../media/profile.png" class="img-thumbnail" width="125" height="125"  alt="..."><br>
     <?php
+    echo '<p>Bio:</p>';
     if (isset($_SESSION['username']) && $_SESSION['username'] === $username){ 
-     echo '<button type="button" class="mt-5 btn btn2 "  data-bs-toggle="modal" data-bs-target="#addModal">
-    <p>Voeg toe</p></button>';}
+     echo '<button type="button" class="mt-5 btn3"  data-bs-toggle="modal" data-bs-target="#addModal">
+    <p>Voeg auto toe</p></button>';}
 ?>
 <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -36,8 +37,8 @@
       </div>
       <div class="modal-body">
          <?php 
-    if (isset($_SESSION['username']) && $_SESSION['username'] === $username){
-      echo '<div class="img-upload">
+    if (isset($_SESSION['username']) && $_SESSION['username'] === $username){ ?>
+      <div class="img-upload">
       <form action="../includes/img-upload.inc.php" method="post" enctype="multipart/form-data" class="row g-3">
           <div class="col-md-6">
               <label for="filename" class="form-label">File Name</label>
@@ -55,21 +56,16 @@
               <label for="file" class="form-label">Choose Image</label>
               <input type="file" class="form-control" id="file" name="file" required>
           </div>
-          <div class="col-12">
-              <button type="submit" name="submit" class="btn btn-primary">Upload</button>
-          </div>
-      </form>
-  </div>';
-  }
-    ?>
+      
+  </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
+        <button type="submit" name="submit" class="btn btn-primary">Upload</button>
+      </form></div>
     </div>
   </div>
 </div>
-
+<?php } ?>
    
   </div>
     <div class="col-md-8">
@@ -92,7 +88,7 @@ try {
         $modalId = 'modal_' . $row['idUploads']; // Generate a unique modal ID
 
         echo '<div class="col-md-2 item fadein">';
-        echo '<img src="../media/gallery/'.$row["imgFullNameUploads"].'" class="img-fluid ratio-4x3" alt="'.$row['titleUploads'].'" data-bs-toggle="modal" data-bs-target="#'.$modalId.'">'; // Adding data-bs attributes for the modal
+        echo '<img src="../media/gallery/'.$row["imgFullNameUploads"].'" class="img-fluid" alt="'.$row['titleUploads'].'" data-bs-toggle="modal" data-bs-target="#'.$modalId.'">'; // Adding data-bs attributes for the modal
         echo '<div>';
         echo '<p class="fs-10 mb-0">' . $row['titleUploads'] . '</p>';
         echo '</div>';
@@ -132,6 +128,7 @@ try {
     <div class="col-md-8">
       <h2>Te Koop</h2>
       <!-- Komt nog -->
+      -- Coming soon --
     </div>
   </div>
 </div>
