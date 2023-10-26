@@ -12,5 +12,6 @@ functies die nog moeten komen:
 - Een functie om de auto te kopen (in contact komen met de eigenaar)
 
 Bugs:
+- Lokaal werkt de header met links naar profiel wel wanneer ingelogd, maar online niet.
 - je kunt nu nog elke username die niet bestaat invoeren in de url.
 - nog niet perfect voor mobile.
